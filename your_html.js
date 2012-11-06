@@ -1010,11 +1010,12 @@ function handler_SellItem(itemid) {
         document.getElementById("create_listing_form_condition").value = "";
         document.getElementById("create_listing_form_price").value = "";
         document.getElementById("create_listing_form_new_tags").value = "";
+
     }
 
     //set quantity to default of 1
     document.getElementById("create_listing_form_quantity").value = 1;
-
+    $("label.error").hide();
 } // end of handler for selling item
 
 function extractText(str) {
@@ -1081,7 +1082,8 @@ function handler_AddListing(itemidValue) {
              document.getElementById("listing_created_content").getElementsByTagName("p")[0].innerText = "There was an error in adding your listing. Please try again.";
         }
     });
-  
+ 
+    $("#create_listing_form").validate().resetForm(); 
     $.mobile.changePage( $("#listing_created") );
 } // end of handler for add Listing
  
