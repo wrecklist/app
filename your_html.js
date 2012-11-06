@@ -1006,6 +1006,10 @@ function handler_SellItem(itemid) {
                 document.getElementById("create_listing_form_isbn").value = extractText(paragraphElementArray[i].innerText);
             }
         }
+
+        document.getElementById("create_listing_form_condition").value = "";
+        document.getElementById("create_listing_form_price").value = "";
+        document.getElementById("create_listing_form_new_tags").value = "";
     }
 
     //set quantity to default of 1
