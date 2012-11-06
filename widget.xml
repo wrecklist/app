@@ -4,6 +4,7 @@
     
     <html file="your_html.html"/>
     <css file="your_css.css"/>
+    <javascript file="jquery.validate.min.js"/>
     <javascript file="your_html.js"/>
     
     <library name="jquery.mobile"/> 
