@@ -163,28 +163,53 @@
         <form id="create_listing_form">
             <div data-role="fieldcontain">
                 <label for="create_listing_form_title">Title </label>
-                <input type="text" name="title" id="create_listing_form_title"/>
+                <em>*</em>
+                <input type="text" name="title" id="create_listing_form_title" class="required"/>
+            </div>
+            <div data-role="fieldcontain">
                 <label for="create_listing_form_edition">Edition </label>
-                <input type="text" name="edition" id="create_listing_form_edition"/>
+                <em>*</em>
+                <input type="text" name="edition" id="create_listing_form_edition" class="required digits"/>
+            </div>
+            <div data-role="fieldcontain">
                 <label for="create_listing_form_author">Author </label>
-                <input type="text" name="author" id="create_listing_form_author"/>
+                <em>*</em>
+                <input type="text" name="author" id="create_listing_form_author" class="required textonly"/>
+            </div>
+            <div data-role="fieldcontain">
                 <label for="create_listing_form_condition">Condition </label>
-                <input type="text" name="condition" id="create_listing_form_condition"/>
+                <em>*</em>
+                <input type="text" name="condition" id="create_listing_form_condition"  class="required textonly"/>
+            </div>
+            <div data-role="fieldcontain">
                 <label for="create_listing_form_price">Price per item($) </label>
-                <input type="text" name="price" id="create_listing_form_price"/>
+                <em>*</em>
+                <input type="text" name="price" id="create_listing_form_price" class="required number"/>
+            </div>
+            <div data-role="fieldcontain">
                 <label for="create_listing_form_quantity">Quantity </label>
-                <input type="text" name="quantity" id="create_listing_form_quantity"/>
+                <em>*</em>
+                <input type="text" name="quantity" id="create_listing_form_quantity" class="required digits"/>
+            </div>
+            <div data-role="fieldcontain">
                 <label for="create_listing_form_isbn">ISBN </label>
-                <input type="text" name="isbn" id="create_listing_form_isbn"/>
+                <em>*</em>
+                <input type="text" name="isbn" id="create_listing_form_isbn" class="required"/>
+            </div>
+            <div data-role="fieldcontain">
                 <label for="create_listing_form_description">Description </label>
                 <input type="text" name="description" id="create_listing_form_description"/>
+            </div>
+            <div data-role="fieldcontain">
                 <label for="create_listing_form_existing_tags">Existing Tags </label>
                 <input type="text" name="existing_tags" id="create_listing_form_existing_tags" disabled="disabled"/>
+            </div>
+            <div data-role="fieldcontain">
                 <label for="create_listing_form_new_tags">Additional Tags </label>
                 <input type="text" name="new_tags" id="create_listing_form_new_tags"/>
             </div>
         </form> 
-        <a href="#listing_created" data-role="button" data-icon="add" data-inline="true" data-theme='a'>
+        <a href="#" data-role="button" data-icon="add" data-inline="true" data-theme='a'>
             Add Listing
         </a>
     </div>

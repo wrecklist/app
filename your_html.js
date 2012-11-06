@@ -641,8 +641,20 @@ function doSearchPostProcessing(searchText, listViewHTML, isPageTransitionRequir
      });
 //------------------------end of transaction related part-------------------------------------
 
+     $("#create_listing").on('pageinit', function(e) {
+        jQuery.validator.addMethod (
+            "textonly",
+            function(value, element)
+            {
+                valid = false;
+                if (/[^-\.a-zA-Z\s]/.test(value) == false)
+                    valid = true;
 
-
+                return this.optional(element) || valid;
+            },
+            jQuery.format("Please enter only letters, spaces, periods, or hyphens")
+        );
+    });
 
 }); //end of main jquery function invocation
 
@@ -1013,6 +1025,17 @@ function extractText(str) {
 
 function handler_AddListing(itemidValue) {
     console.log("Add Listing invoked with:" + itemidValue);
+    if( $("#create_listing_form").valid() )
+    {
+        console.log("Create Listing Form is valid");
+    }
+    else 
+    {
+        console.log("Create Listing Form is invalid");
+        $.mobile.changePage( $("#create_listing") );
+        return false;
+    }
+
     var titleValue = document.getElementById("create_listing_form_title").value;
     var editionValue = document.getElementById("create_listing_form_edition").value;
     var authorValue = document.getElementById("create_listing_form_author").value;
@@ -1054,7 +1077,8 @@ function handler_AddListing(itemidValue) {
              document.getElementById("listing_created_content").getElementsByTagName("p")[0].innerText = "There was an error in adding your listing. Please try again.";
         }
     });
-   
+  
+    $.mobile.changePage( $("#listing_created") );
 } // end of handler for add Listing
  
 
